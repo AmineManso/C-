@@ -1,2 +1,2 @@
-# TP3-C++-
-TP3_C++:    MFC_TP3_videoDlg 
+boite de dialogue pour traitements sur une webcam-
+un code opencv est inclus 
