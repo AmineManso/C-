@@ -1,0 +1,45 @@
+//  main.cpp  du TP1 c++
+
+#include "stdafx.h"
+#include "Gate.h"
+#include "Slice.h"
+#include <iostream>
+#include <conio.h>
+using namespace std;
+
+int main()
+{
+	//***************************************************** partie  1)
+	CGate S;
+	bool A = 1, B = 1, C = 0, D = 0;
+	// Méthode 1:
+	bool s1 = S.Et(A, B);
+	bool s2 = S.Or(s1, C);
+	//bool Sortie = S.Xor(s2, D);
+	cout << " Affichage resultat S : " << Sortie << endl;
+	// Méthode 2 : 
+    cout << " Methode 2 :\n Affichage resultat S : " << S.Xor(S.Or( S.Et(A, B)  , C) , D) << endl;
+	
+	//****************************************************partie  3)
+	//********************************************* Réalisation de l'Exemple du TP
+	CSlice MonSlice(0, 1, 1, 1, 1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0); 
+	bool Sortie = MonSlice.Out(0, 0, 1, 1);	//Retourne le contenu de la case numéro 3 du tableau
+											// c'est-à-dire ici la valeur 1.
+	cout << "Sortie = " << Sortie << endl << endl;
+	
+	Sortie = MonSlice.Out(1, 1, 1, 1);  // Retournz la valeur 0 (dernière case du tableau).
+	cout << "Sortie = " << Sortie << endl;
+	//****************************************************** 3.2) 
+	//********************************************* Réaliser la fonction F:
+	CSlice Lut1(0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1);
+	CSlice Lut2(0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0);
+
+	bool S1 = Lut1.Out(0, 1, 1, 1);
+	bool  F = Lut2.Out(0, 0, 1, S1);
+
+	cout << " Sortie Lut1 =" << S1 << endl;
+	cout << " Sortie Lut2 =" << F << endl;
+
+
+	return 0;
+}
