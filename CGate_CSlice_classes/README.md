@@ -1,1 +1,2 @@
-# TP1-C-CGate-et-CSlice
+# CGate-et-CSlice
+apprendre a utiliser les classes en C++
